@@ -1,0 +1,36 @@
+.deleteButton {
+  background-color: #f0f0f0;
+  border: 1px solid #a1a1a1;
+  border-radius: 4px;
+  padding: 0px 8px;
+  display: block;
+  height: 36px;
+}
+
+.deleteButton:hover {
+  background-color: #fcfcfc;
+  box-shadow: 6px 6px 12px -12px rgba(0, 0, 0, 1);
+}
+
+.deleteButton:focus {
+  box-shadow: inset 6px 6px 10px -12px rgba(0, 0, 0, 0.85);
+}
+
+.contactWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contactString {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.contactCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
