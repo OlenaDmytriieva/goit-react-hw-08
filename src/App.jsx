@@ -1,42 +1,3 @@
-// import { useEffect } from "react";
-// import { useDispatch, useSelector } from "react-redux";
-// import ContactForm from "./components/ContactForm/ContactForm";
-// import { Container } from "./components/Container/Container";
-// import { Section } from "./components/Section/Section";
-// import ContactList from "./components/ContactList/ContactList";
-// import SearchBox from "./components/SearchBox/SearchBox";
-// import { Loader } from "./components/Loader/Loader";
-// import Error from "./components/Error/Error";
-// import { fetchContacts } from "./redux/contactsOps";
-// import { selectError, selectLoading } from "./redux/contactsSlice";
-
-
-// export default function App() {
-//   const dispatch = useDispatch();
-//   const loading = useSelector(selectLoading);
-//   const error = useSelector(selectError);
- 
-
-//   useEffect(() => {
-//     dispatch(fetchContacts());
-//   }, [dispatch]);
-
-//   return (
-//     <Section>
-//       <Container>
-//         <div>
-//           <h1>Phonebook</h1>
-//           <ContactForm />
-//           <SearchBox />
-//           {loading && <Loader>Loading in progress, please wait</Loader>}
-//           {error && <Error>Something went wrong</Error>}
-//           <ContactList />
-//         </div>
-//       </Container>
-//     </Section>
-//   );
-// }
-
 import { lazy, Suspense, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
@@ -47,8 +8,7 @@ import RestrictedRoute from "./RestrictedRoute"
 import PrivateRoute from "./PrivatRoute"
 import { Container } from "./components/Container/Container";
 import { Section } from "./components/Section/Section";
-// import RestrictedRoute from "./RestrictedRoute.jsx";
-// import PrivateRoute from "./PrivatRoute.jsx";
+import { Toaster } from 'react-hot-toast';
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const RegistrationPage = lazy(() => import("./pages/RegistrationPage/RegistrationPage"));
@@ -70,6 +30,9 @@ export default function App() {
     <Section>
       <Container>
     <Layout>
+      <div>
+      <Toaster />
+    </div>
       <Suspense fallback={null}>
         <Routes>
           <Route path="/" element={<HomePage />} />

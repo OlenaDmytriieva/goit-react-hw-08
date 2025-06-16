@@ -5,7 +5,12 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useDispatch } from 'react-redux';
 import { addContact } from '../../redux/contacts/operations';
+import toast from "react-hot-toast";
 
+const addToast = (name) => toast(`Contact "${name}" has been added successfully!`, {style: {
+  background: 'lightgreen',
+  textAlign: 'center',
+}});
 const ContactSchema = Yup.object().shape({
   name: Yup.string()
     .min(3, "Enter more than 3 characters, please")
@@ -28,15 +33,29 @@ const ContactForm = () => {
   const numberId = useId();
 
   const handleSubmit = (values, actions) => {
-    dispatch(
-      addContact({
-        id: nanoid(),
-        name: values.name,
+
+  dispatch(
+    addContact({
+      id: nanoid(),
+      name: values.name,
         number: values.number,
-      })
-    );
-    actions.resetForm();
-  };
+    })
+  );
+
+  actions.resetForm();
+  addToast(values.name);
+};
+
+  // const handleSubmit = (values, actions) => {
+  //   dispatch(
+  //     addContact({
+  //       id: nanoid(),
+  //       name: values.name,
+  //       number: values.number,
+  //     })
+  //   );
+  //   actions.resetForm();
+  // };
 
   return (
     <Formik
