@@ -22,7 +22,7 @@ body {
   font-family: Montserrat, -apple-system, "system-ui", "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   margin: 0;
-  display: flex;
+  /* display: flex; */
   /* text-align: center; */
   /* justify-content: center; */
   min-width: 320px;

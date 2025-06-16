@@ -7,3 +7,23 @@
   flex-direction: column;
   margin-bottom: 16px;
 }
+
+.button {
+  background-color: #f0f0f0;
+  border: 1px solid #a1a1a1;
+  border-radius: 4px;
+  padding: 0px 8px;
+  display: block;
+  height: 36px;
+  width: 120px;
+  margin: 0 auto 8px;
+}
+
+.button:hover {
+  background-color: #fcfcfc;
+  box-shadow: 6px 6px 12px -12px rgba(0, 0, 0, 1);
+}
+
+.button:focus {
+  box-shadow: inset 6px 6px 10px -12px rgba(0, 0, 0, 0.85);
+}

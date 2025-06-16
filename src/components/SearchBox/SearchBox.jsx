@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { changeFilter, selectTextFilter } from '../../redux/filtersSlice';
+import { changeFilter } from '../../redux/filters/slice';
+import { selectTextFilter } from '../../redux/filters/selectors';
 import style from "./SearchBox.module.css";
 import { useDebouncedCallback } from "use-debounce";
 

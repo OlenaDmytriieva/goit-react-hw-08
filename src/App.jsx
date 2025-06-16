@@ -45,6 +45,8 @@ import { refreshUser } from "./redux/auth/operations";
 import { selectIsRefreshing } from "./redux/auth/selectors";
 import RestrictedRoute from "./RestrictedRoute"
 import PrivateRoute from "./PrivatRoute"
+import { Container } from "./components/Container/Container";
+import { Section } from "./components/Section/Section";
 // import RestrictedRoute from "./RestrictedRoute.jsx";
 // import PrivateRoute from "./PrivatRoute.jsx";
 
@@ -65,6 +67,8 @@ export default function App() {
   return isRefreshing ? (
     <strong>Refreshing user...</strong>
   ) : (
+    <Section>
+      <Container>
     <Layout>
       <Suspense fallback={null}>
         <Routes>
@@ -73,7 +77,7 @@ export default function App() {
             path="/register"
             element={
               <RestrictedRoute
-                redirectTo="/profile"
+                redirectTo="/contacts"
                 component={<RegistrationPage />}
               />
             }
@@ -95,5 +99,7 @@ export default function App() {
         </Routes>
       </Suspense>
     </Layout>
+    </Container>
+    </Section>
   );
 }
